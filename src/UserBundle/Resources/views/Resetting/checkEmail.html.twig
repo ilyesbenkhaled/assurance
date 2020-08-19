@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+    {% block navigation %}
+		{% include 'AssuranceFrontBundle:default:navigation.html.twig' %}
+    {% endblock %}
+{% block fos_user_content %}
+<p style="color:white; font-size:300%;">
+{{ 'resetting.check_email'|trans({'%email%': email}, 'UserBundle') }}
+</p>
+{% endblock %}

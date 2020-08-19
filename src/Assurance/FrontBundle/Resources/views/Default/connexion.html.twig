@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+
+ {% block navigation %}
+{% include 'AssuranceFrontBundle:default:navigation.html.twig' %}
+               {% endblock %}
+
+{% block from %}
+      
+             <div class="col-md-3">
+            <div class="form-group">
+              <label for="bathroom">Email </label>
+                        <input type="text" class="form-control">  
+
+            </div>
+            </div>
+            <!-- break -->
+            <div class="col-md-3">
+            <div class="form-group">
+              <label for="status2">Mot de passe</label>
+                           <input type="text" class="form-control">  
+ </div>
+            </div>
+			            <!-- break -->
+</br>
+			            <div class="col-md-3">
+
+            <div class="form-group">
+             <a href="{{ path('autoassure') }}"><button type="button" class="btn btn-lg btn-default">Connexion</button></a>
+
+              
+            </div>
+            </div>
+            <!-- break -->
+            <div class="col-md-3"> 
+				</br>
+			  </br>
+          </br>
+			  </br>
+          </br>
+			
+           
+            
+            
+            
+            
+            
+            
+            </div>
+            
+{% endblock %}
+
+

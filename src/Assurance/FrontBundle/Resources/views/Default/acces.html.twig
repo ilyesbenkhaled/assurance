@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+
+
+  {% block navigation %}
+{% include 'AssuranceFrontBundle:default:navigation.html.twig' %}
+{% endblock %}
+{% block slider %}
+{% endblock %}
+
+{% block from %}
+                <div class="container">
+<div class="row">
+  <div class="col-sm-3">
+    <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Sidebar menu</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li ><a href="{{ path('moncompte') }}">Coordonnees Personnel</a></li>
+            <li class="active"> <a href="{{ path('acces') }}"> Votre acces</a></li>
+            <li><a  href="{{ path('factures') }}">Votre factures</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9">
+   <H5>
+  <div class="col-md-6">
+            <div class="form-group">
+              <label for="country"><a href="{{ path('moncompte') }}">Liste de votre voitures </a> </label>  
+			  </div>
+			  
+			 <div class="form-group">
+              <label for="country"><a href="{{ path('moncompte') }}">Liste de votre motos </a> </label>  
+			   </div>
+			       <div class="form-group">                     
+				   <label for="country"><a href="{{ path('moncompte') }}">Liste de votre habitations </a> </label>  
+
+			 </div>
+			 <div class="form-group">
+              <label for="country"><a href="{{ path('moncompte') }}">Liste de votre assurance </a> </label>  
+			  </div>
+
+           </div>
+         
+			 
+        
+	   
+           
+     </div> 
+   {% endblock %}
+
+
+

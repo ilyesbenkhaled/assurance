@@ -1,0 +1,38 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+# ...
+    admin.image:
+        class: Assurance\FrontBundle\Admin\ImageAdmin
+        arguments: [~, Assurance\FrontBundle\Entity\Image, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Image }
+    admin.article:
+        class: Assurance\FrontBundle\Admin\ArticleAdmin
+        arguments: [~, Assurance\FrontBundle\Entity\Article, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Article }
+    admin.habitation:
+        class: Assurance\FrontBundle\Admin\HabitationAdmin
+        arguments: [~, Assurance\FrontBundle\Entity\Habitation, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Habitation }
+    admin.moto:
+        class: Assurance\FrontBundle\Admin\MotoAdmin
+        arguments: [~, Assurance\FrontBundle\Entity\Moto, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Moto } 
+    admin.voiture:
+        class: Assurance\FrontBundle\Admin\VoitureAdmin
+        arguments: [~, Assurance\FrontBundle\Entity\Voiture, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Voiture }      
+    admin.SocialLinks:
+        class: Assurance\FrontBundle\Admin\SocialLinksAdmin
+        arguments: [~, Assurance\FrontBundle\Entity\SocialLinks, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: SocialLinks }      
+    

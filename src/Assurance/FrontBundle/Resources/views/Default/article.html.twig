@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block navigation %}
+{% include 'AssuranceFrontBundle:default:navigation.html.twig' %}
+{% endblock %}
+{% block from %}
+	<h4>{{ article.titre }}</h4> <br/>
+	{{ article.body }} <br><br>
+	<p style="text-align: center"><img src="{{ asset('uploads/media') }}/{{ article.image }}" style="height:400px;width:auto;"></p><br/>
+{% endblock %}
+{% block lastest_articles %}
+	{% for article in articles %}
+		<div class="gallery">
+		  <a href="{{ path('article', {'id' : article.id })}}">
+		    <img src="{{ asset('uploads/media') }}/{{ article.image }}" alt="{{ article.image }}">
+		  </a>
+		  <div class="desc" style="height:30px">{{ article.titre }}</div>
+		</div>
+	{% endfor %}
+{% endblock %}
+{% block stylesheets %}
+{{ parent() }} 
+<style>
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+    height: 200px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width:178px;
+    height:120px;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+</style>
+{% endblock %}

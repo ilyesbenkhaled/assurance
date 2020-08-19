@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+    {% block navigation %}
+		{% include 'AssuranceFrontBundle:default:navigation.html.twig' %}
+    {% endblock %}
+
+
+
+{% block slider %}
+
+{% endblock %}
+{% block from %}
+    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+		{{ form_widget(form. _token) }}
+			
+		<div class="imgcontainer">
+			<img src="{{ asset('FrontBundle/img/img_avatar2.png') }}" alt="Avatar" class="avatar">
+		</div>
+		<div class="container" style="width: 80%;padding: 16px;">	
+			<div class="col-md-6">			  
+				<div class="form-group">
+					<label>{{ 'form.username'|trans({},'UserBundle') }}</label>
+					<input type="text" class="form-control" id="app_user_registration_username" name="app_user_registration[username]" required="required" maxlength="255" pattern=".{2,}" /> 
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>{{ 'form.password'|trans({},'UserBundle') }}</label>
+					<input type="password" class="form-control" id="app_user_registration_plainPassword_first" name="app_user_registration[plainPassword][first]" required="required" /> 
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>{{ 'form.email'|trans({},'UserBundle') }}</label>
+					<input type="email" class="form-control" id="app_user_registration_email" name="app_user_registration[email]" required="required" /> 
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>{{ 'form.password_confirmation'|trans({},'UserBundle') }}</label>
+					<input type="password" class="form-control" id="app_user_registration_plainPassword_second" name="app_user_registration[plainPassword][second]" required="required" /> 
+				</div>
+			</div>
+            <!-- break -->
+            <div class="col-md-6">
+				<div class="form-group">
+					<label>{{ 'form.nom'|trans({},'UserBundle') }}</label>
+					<input type="text" class="form-control" id="app_user_registration_firstname" name="app_user_registration[firstname]" required="required" maxlength="255" pattern=".{2,}" /> 
+				</div>
+			</div>
+            
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>{{ 'form.prenom'|trans({},'UserBundle') }}</label>
+					<input type="text" class="form-control" id="app_user_registration_lastname" name="app_user_registration[lastname]" required="required" maxlength="255" pattern=".{2,}" /> 
+				</div>
+			</div>
+			<div class="col-md-3 col-md-offset-9">
+				<div class="form-group">
+					<button type="submit" name="_submit">Enregistrer</button>
+				</div>
+			</div>			
+        </div>
+		<!-- break -->
+		<div class="row-div" style="padding-top:20px;">
+			<span style="color:red">
+				{{ form_errors(form.username) }}
+				{{ form_errors(form.email) }}
+				{{ form_errors(form.plainPassword.first) }}
+				{{ form_errors(form.plainPassword.second) }}
+			</span>										
+		</div>
+	</form>
+{% endblock %}
+{% block stylesheets %}
+ {{ parent() }}
+ <style>
+form {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	color: #000;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 15%;
+    border-radius: 50%;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+{% endblock %}

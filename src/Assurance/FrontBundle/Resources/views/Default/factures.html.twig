@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+
+
+  {% block navigation %}
+{% include 'AssuranceFrontBundle:default:navigation.html.twig' %}
+{% endblock %}
+{% block slider %}
+{% endblock %}
+
+{% block from %}
+                <div class="container">
+<div class="row">
+  <div class="col-sm-3">
+    <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Sidebar menu</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li ><a href="{{ path('fos_user_profile_show') }}">Coordonnees Personnel</a></li>
+            <li > <a href="{{ path('fos_user_profile_edit') }}">Editer Profile</a></li>
+            <li class="active"><a href="{{ path('factures') }}">Votre factures</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9">
+   <H5>
+  <form>
+  <div class="form-group">
+    <h4>Merci d'ajouter votre facteur d'assurance </h4>  </div>
+	</br></br></br>
+  <div class="form-group">
+    <label for="exampleInputFile">Votre Facteur</label>
+    <input type="file" id="exampleInputFile">
+  </div>
+  
+  <button type="submit" class="btn btn-default">Enregistrer</button>
+  
+</form>
+	   
+           
+     </div> 
+   {% endblock %}
+
+
+

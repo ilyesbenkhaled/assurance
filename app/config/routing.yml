@@ -1,0 +1,48 @@
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+assurance_front:
+    resource: "@AssuranceFrontBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+# IMPORTANT
+# Import the following routes only if when you start the project
+# those routes are not available :
+
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin
+
+#sonata_user_security:
+#    resource: "@SonataUserBundle/Resources/config/routing/sonata_security_1.xml"
+
+#sonata_user_resetting:
+#    resource: "@SonataUserBundle/Resources/config/routing/sonata_resetting_1.xml"
+#    prefix: /resetting
+
+#sonata_user_profile:
+ #   resource: "@SonataUserBundle/Resources/config/routing/sonata_profile_1.xml"
+  #  prefix: /profile
+
+#sonata_user_change_password:
+ #   resource: "@SonataUserBundle/Resources/config/routing/sonata_change_password_1.xml"
+  #  prefix: /profile
+
+sonata_user_admin_security:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+
+sonata_user_admin_resetting:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_resetting.xml'
+    prefix: /admin/resetting
+_sonata_admin:
+  resource: .
+  type: sonata_admin
+  prefix: /admin
+assurance_user_routing:
+    resource: "@UserBundle/Resources/config/routing.yml"

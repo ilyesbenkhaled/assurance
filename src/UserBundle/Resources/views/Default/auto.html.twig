@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+
+
+  {% block navigation %}
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="{{ path('auto') }}">Voir assurance auto</a></li>
+						<li><a href="{{ path('moto') }}">Voir assurance moto</a></li>
+								<li><a href="{{ path('habitation') }}">Voir assurance habitation </a></li>
+                      <li>       <a href="{{ path('inscription') }}">   <button type="button" class="btn btn-lg btn-default">Inscription</button></a></a></li>
+                        <li><a href="{{ path('connexion') }}"> <button type="button" class="btn btn-lg btn-default">Connexion</button></a></li>
+                    </ul>
+{% endblock %}
+
+
+{% block from %}
+            <div class="col-md-3">
+            <div class="form-group">
+              <label for="country">Marque</label>
+              <select class="form-control">
+              <option>--</option>
+             
+     
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bedroom">Energie</label>
+              <select class="form-control">
+              <option>--</option>
+              
+              </select>
+            </div>
+            </div>
+            <!-- break -->
+            <div class="col-md-3">
+            <div class="form-group">
+              <label for="location">Modele</label>
+              <select class="form-control">
+              <option>--</option>
+              
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bathroom">Kilométrage</label>
+              <select class="form-control">
+              <option>--</option>
+              
+              </select>
+            </div>
+            </div>
+            <!-- break -->
+            <div class="col-md-3">
+            <div class="form-group">
+              <label for="status">Nombre de place </label>
+            <input type="text" class="form-control">
+            
+            </div>
+            <div class="form-group">
+              <label for="minprice">Utilisation</label>
+              
+            </div>
+<label> Personnelle <input type="radio"> </label>  <label>Profesionelle <input type="radio"></label>          </div>
+            <!-- break -->
+           <div class="col-md-3">
+            <div class="form-group">
+              <label for="status">Puissance cv  </label>
+            <input type="text" class="form-control">
+            </div>
+            
+            </div>
+            </br>
+			  </br>
+			  </br></br>
+			  </br></br>
+			
+			  
+			 
+			  
+            <div class="col-md-3"><input name="submit" value="Search" class="btn btn-success btn-lg btn-block" type="submit"></div>
+{% endblock %}
+
+
+

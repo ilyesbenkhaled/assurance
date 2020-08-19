@@ -1,0 +1,17 @@
+<ul class="nav navbar-nav">
+    <li class="active"><a href="{{ path('auto') }}">Voir assurance Voiture</a></li>
+	<li><a href="{{ path('moto') }}">Voir assurance moto</a></li>
+	<li><a href="{{ path('habitation') }}">Voir assurance habitation </a></li>
+	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+		<li><a href="{{ path('fos_user_profile_show') }}">
+			<button type="button" class="btn btn-lg btn-default">{{ app.user.username }}</button>
+		</a> |</li><li> <a href="{{ path('fos_user_security_logout') }}">
+			<button type="button" class="btn btn-lg btn-default">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</button>
+		</a>
+		</li>
+	{% else %}
+		<li><a href="{{ path('fos_user_registration_register') }}">   <button type="button" class="btn btn-lg btn-default">Inscription</button></a></li>
+		<li><a href="{{ path('fos_user_security_login') }}"> <button type="button" class="btn btn-lg btn-default">Connexion</button></a></li>
+	{% endif %}
+	
+</ul>

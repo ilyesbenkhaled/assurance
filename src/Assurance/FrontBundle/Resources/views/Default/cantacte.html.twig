@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+{% block navigation %}
+{% include 'AssuranceFrontBundle:default:navigation.html.twig' %}
+{% endblock %}
+
+{% block from %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<form action="{{ path('contact') }}" method="POST" {{ form_enctype(form) }}>
+				{{ form_widget(form. _token) }}	
+				<div class="col-sm-12">
+					<div class="form-group">
+						{{ form_errors(form.name) }}
+						{{ form_errors(form.subject) }}
+						{{ form_errors(form.email) }}
+						{{ form_errors(form.message) }}
+					</div>
+					</br>	
+					<div class="form-group">
+						<input type="text" name="assurance_front_contact[name]" id="assurance_front_contact_name" class="form-control wow fadeInUp" placeholder="Votre Nom" required/>
+					</div>
+					</br>
+					<div class="form-group">
+						<input type="text" name="assurance_front_contact[email]" id="assurance_front_contact_email" class="form-control wow fadeInUp" placeholder="Votre Email" required/>
+					</div>	
+					</br>
+					<div class="form-group">
+						<input type="text" name="assurance_front_contact[subject]" id="assurance_front_contact_subject" class="form-control wow fadeInUp" placeholder="Sujet" required/>
+					</div>	
+					</br>							
+					<div class="form-group">
+						<textarea name="assurance_front_contact[message]" rows="10" cols="20" id="assurance_front_contact_message" class="form-control input-message wow fadeInUp"  placeholder="Votre Message" required></textarea>
+					</div>
+					</br>
+					<div class="form-group">
+						<input type="submit" name="submit" value="envoyer" class="btn btn-success wow fadeInUp" />
+					</div>
+					
+					{% for label, flashes in app.session.flashbag.all %}
+					    {% for flash in flashes %}
+					        <div class="alert alert-{{ label }}">
+					            {{ flash }}
+					        </div>
+					    {% endfor %}
+					{% endfor %}
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

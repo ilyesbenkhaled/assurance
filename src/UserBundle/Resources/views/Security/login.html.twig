@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+    {% block navigation %}
+		{% include 'AssuranceFrontBundle:default:navigation.html.twig' %}
+    {% endblock %}
+{% block slider %}
+
+{% endblock %}
+{% block from %}
+        {% if error %}
+			<div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+		{% endif %}
+		<h2>Connectez-vous !</h2>
+
+		<form action="{{ path("fos_user_security_check") }}" method="post">
+			<div class="imgcontainer">
+				<img src="{{ asset('FrontBundle/img/img_avatar2.png') }}" alt="Avatar" class="avatar">
+			</div>
+
+			<div class="container" style="width: 80%;padding: 16px;">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label><b>{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</b></label>
+						<input type="text" placeholder="{{ 'security.login.username'|trans({}, 'UserBundle') }}" id="username" name="_username" required>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label><b>{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</b></label>
+						<input type="password" placeholder="{{ 'security.login.password'|trans({}, 'UserBundle') }}" id="password" name="_password" required>
+					</div>
+				</div>
+				<div class="col-md-4 col-md-offset-8">
+					<div class="form-group">
+						<button type="submit" name="_submit">Login</button>
+						<input type="checkbox" checked="checked" id="remember_me" name="_remember_me"> {{ 'security.login.remember_me'|trans({}, 'UserBundle') }}
+					</div>
+				</div>
+
+				<div class="col-md-12" style="background-color:#f1f1f1">
+					
+							<div class="form-group">
+							<label><span class="psw"><a href="{{ path('fos_user_resetting_request')}}">password?</a></span></label>
+							<span class="psw"><a href="#">Forgot</a></span>
+							
+							</div>
+				</div>
+			</div>
+
+
+		</form>
+{% endblock %}
+{% block stylesheets %}
+ {{ parent() }}
+ <style>
+form {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	color: #000;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 15%;
+    border-radius: 50%;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+
+{% endblock %}
